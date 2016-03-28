@@ -1,7 +1,14 @@
+/** Class with static methods which implement basic sorting algorithms.
+ * @autor Agapov Pavel
+ * @version 1.01
+ */
 package ru.agapovp;
 
-public class Sort {
+public abstract class Sort {
 
+    /** Bubble sort
+     * @param arr - One-dimensional unsorted integer array.
+     */
     public static void bSort(int[] arr) {
 
         long start = System.nanoTime();
