@@ -1,6 +1,6 @@
 /** Class with static methods which implement basic sorting algorithms.
  * @autor Agapov Pavel
- * @version 1.11
+ * @version 1.21
  */
 package ru.agapovp;
 
@@ -27,6 +27,7 @@ public abstract class Sort {
 
         System.out.println("Spent time: " + (stop - start));
     }
+
     /** Insertion sort
      * @param arr - One-dimensional unsorted integer array.
      */
@@ -34,7 +35,7 @@ public abstract class Sort {
 
         long start = System.nanoTime();
 
-       for(int i = 1; i < arr.length; i++){
+        for(int i = 1; i < arr.length; i++) {
            for(int j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
                int b = arr[j - 1];
                arr[j - 1] = arr[j];
@@ -45,6 +46,29 @@ public abstract class Sort {
         long stop = System.nanoTime();
 
         System.out.println("Spent time: " + (stop - start));
+    }
 
+    /** Selection sort
+     * @param arr - One-dimensional unsorted integer array.
+     */
+    public static  void selSort(int[] arr) {
+
+        long start = System.nanoTime();
+        
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if(arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            int b = arr[i];
+            arr[i] = arr[min];
+            arr[min] = b;
+        }
+
+        long stop = System.nanoTime();
+
+        System.out.println("Spent time: " + (stop - start));
     }
 }
